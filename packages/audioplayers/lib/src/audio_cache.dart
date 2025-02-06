@@ -101,7 +101,7 @@ class AudioCache {
     // create a temporary file on the device to be read by the native side
     final file = fileSystem.file('${await getTempDir()}/$cacheId/$fileName');
     await file.create(recursive: true);
-    await file.writeAsBytes(byteData.buffer.asUint8List(), flush = true);
+    await file.writeAsBytes(byteData.buffer.asUint8List(), flush: true);
 
     // returns the local file uri
     return file.uri;
